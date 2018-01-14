@@ -25,6 +25,19 @@ class HeaderStore extends ParameterStore
 
     /**
      * @param string $name
+     * @return string
+     */
+    public function getLine($name)
+    {
+        if (false === ($values = $this->get($name))) {
+            return '';
+        }
+
+        return implode(',', $values);
+    }
+
+    /**
+     * @param string $name
      * @return bool
      */
     public function has($name)
