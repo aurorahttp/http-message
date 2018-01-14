@@ -85,11 +85,11 @@ class ServerRequest extends Request implements ServerRequestInterface
      * typically derived from PHP's $_SERVER superglobal. The data IS NOT
      * REQUIRED to originate from $_SERVER.
      *
-     * @return ParameterStore
+     * @return array
      */
     public function getServerParams()
     {
-        return $this->servers;
+        return $this->servers->all();
     }
 
     /**
@@ -100,11 +100,11 @@ class ServerRequest extends Request implements ServerRequestInterface
      * The data MUST be compatible with the structure of the $_COOKIE
      * superglobal.
      *
-     * @return ParameterStore
+     * @return array
      */
     public function getCookieParams()
     {
-        return $this->cookies;
+        return $this->cookies->all();
     }
 
     /**
