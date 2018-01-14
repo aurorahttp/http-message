@@ -38,6 +38,7 @@ abstract class Message implements MessageInterface
     {
         $this->headers = new HeaderStore($headers);
         $this->body = $body;
+        $this->protocolVersion = $protocolVersion;
     }
 
     /**
