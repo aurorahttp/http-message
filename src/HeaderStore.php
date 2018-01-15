@@ -12,15 +12,31 @@ namespace Panlatent\Http\Message;
 class HeaderStore extends ParameterStore
 {
     /**
+     * HeaderStore constructor.
+     *
+     * @param array $parameters
+     */
+    public function __construct($parameters = [])
+    {
+        foreach (array_keys($parameters) as $key) {
+            $name = $this->prepareName($key);
+            if ($name != $key) {
+                $parameters[$name] = $parameters[$key];
+                unset($parameters[$key]);
+            }
+        }
+
+        parent::__construct($parameters);
+    }
+
+    /**
      * @param string $name
      * @param bool   $default
      * @return string[]
      */
     public function get($name, $default = false)
     {
-        $name = $this->prepareName($name);
-
-        return parent::get($name, $default);
+        return parent::get($this->prepareName($name), $default);
     }
 
     /**
@@ -33,7 +49,21 @@ class HeaderStore extends ParameterStore
             return '';
         }
 
-        return implode(',', $values);
+        return implode(', ', $values);
+    }
+
+    /**
+     * @param string $name
+     * @return string
+     */
+    public function getRawLine($name)
+    {
+        $name = $this->prepareName($name);
+        if ('' === ($line = $this->getLine($name))) {
+            return $name . ': ';
+        }
+
+        return $name . ': ' . $line;
     }
 
     /**
@@ -42,19 +72,16 @@ class HeaderStore extends ParameterStore
      */
     public function has($name)
     {
-        $name = $this->prepareName($name);
-
-        return parent::has($name);
+        return parent::has($this->prepareName($name));
     }
 
     /**
      * @param string   $name
-     * @param string[] $value
+     * @param string[] $values
      */
-    public function set($name, $value)
+    public function set($name, $values)
     {
-        $name = $this->prepareName($name);
-        parent::set($name, $value);
+        parent::set($this->prepareName($name), $values);
     }
 
     /**
@@ -62,12 +89,11 @@ class HeaderStore extends ParameterStore
      */
     public function remove($name)
     {
-        $name = $this->prepareName($name);
-        parent::remove($name);
+        parent::remove($this->prepareName($name));
     }
 
     /**
-     * Returns standard header name format.
+     * Standard header name format.
      *
      * @param string $name
      * @return string
