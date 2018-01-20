@@ -1,5 +1,5 @@
 {
-    "name": "aurorahttp/http-message",
+    "name": "aurora/http-message",
     "description": "A HTTP Message library that implements the Psr-7 standard",
     "type": "library",
     "license": "MIT",
