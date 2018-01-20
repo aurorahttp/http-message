@@ -7,12 +7,12 @@
  * @license https://opensource.org/licenses/MIT
  */
 
-namespace Panlatent\Http\Message;
+namespace Aurora\Http\Message;
 
 /**
  * Class ParameterStore
  *
- * @package Panlatent\Http\Message
+ * @package Aurora\Http\Message
  */
 class ParameterStore implements \ArrayAccess, \Countable, \Iterator
 {

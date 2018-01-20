@@ -7,7 +7,7 @@
  * @license https://opensource.org/licenses/MIT
  */
 
-namespace Panlatent\Http\Message;
+namespace Aurora\Http\Message;
 
 use InvalidArgumentException;
 use Psr\Http\Message\UriInterface;

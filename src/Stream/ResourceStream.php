@@ -7,9 +7,9 @@
  * @license https://opensource.org/licenses/MIT
  */
 
-namespace Panlatent\Http\Message\Stream;
+namespace Aurora\Http\Message\Stream;
 
-use Panlatent\Http\Message\Stream;
+use Aurora\Http\Message\Stream;
 
 class ResourceStream extends Stream
 {

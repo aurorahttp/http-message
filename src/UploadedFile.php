@@ -7,10 +7,10 @@
  * @license https://opensource.org/licenses/MIT
  */
 
-namespace Panlatent\Http\Message;
+namespace Aurora\Http\Message;
 
 
-use Panlatent\Http\Message\Stream\FileStream;
+use Aurora\Http\Message\Stream\FileStream;
 use Psr\Http\Message\UploadedFileInterface;
 
 class UploadedFile implements UploadedFileInterface

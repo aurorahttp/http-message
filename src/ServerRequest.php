@@ -7,7 +7,7 @@
  * @license https://opensource.org/licenses/MIT
  */
 
-namespace Panlatent\Http\Message;
+namespace Aurora\Http\Message;
 
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamInterface;
@@ -377,11 +377,11 @@ class ServerRequest extends Request implements ServerRequestInterface
     protected function getDefaultParsers()
     {
         return [
-            'application/octet-stream' => 'Panlatent\\Http\\Message\\Parser\\FormDataParser',
-            'application/json' => 'Panlatent\\Http\\Message\\Parser\\JsonParser',
-            'application/xml' => 'Panlatent\\Http\\Message\\Parser\\XmlParser',
-            'application/x-www-form-urlencoded' => 'Panlatent\\Http\\Message\\Parser\\FormUrlEncodeParser',
-            'multipart/form-data' => 'Panlatent\\Http\\Message\\Parser\\FormDataParser',
+            'application/octet-stream' => 'Aurora\\Http\\Message\\Parser\\FormDataParser',
+            'application/json' => 'Aurora\\Http\\Message\\Parser\\JsonParser',
+            'application/xml' => 'Aurora\\Http\\Message\\Parser\\XmlParser',
+            'application/x-www-form-urlencoded' => 'Aurora\\Http\\Message\\Parser\\FormUrlEncodeParser',
+            'multipart/form-data' => 'Aurora\\Http\\Message\\Parser\\FormDataParser',
         ];
     }
 }

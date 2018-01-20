@@ -7,7 +7,7 @@
  * @license https://opensource.org/licenses/MIT
  */
 
-namespace Panlatent\Http\Message\Response;
+namespace Aurora\Http\Message\Response;
 
 class StatusCode
 {

@@ -7,7 +7,7 @@
  * @license https://opensource.org/licenses/MIT
  */
 
-namespace Panlatent\Http\Message;
+namespace Aurora\Http\Message;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\StreamInterface;
