@@ -241,9 +241,9 @@ class ServerRequest extends Request implements ServerRequestInterface
             if ($this->parsers->has($contentType)) {
                 $class = $this->parsers->get($contentType);
                 $parser = new $class;
-                if ($parser instanceof ParserInterface) {
-                    $this->parsedBody = $parser->parse($this, $this->body);
-                }
+//                if ($parser instanceof ParserInterface) {
+//                    $this->parsedBody = $parser->parse($this, $this->body);
+//                }
             }
         }
 
